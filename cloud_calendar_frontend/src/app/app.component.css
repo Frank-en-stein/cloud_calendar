@@ -1,0 +1,118 @@
+.pull-right {
+    text-align: right;
+}
+
+.demo.button input {
+    margin-right: 2px;
+}
+
+.demo.button .ui-button-text {
+    padding: .4em .6em;
+    line-height: 0.8;
+}
+.month-display {
+    padding: 0 0 0 0 !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.month-arrow {
+    color: gray;
+    font-size: 4.5vh;
+}
+.month-arrow:hover {
+    color: black;
+}
+#NoIconDemo {
+    border: 0;
+    text-align: center;
+    font-size: 4vh;
+}
+#NoIconDemo:hover {
+    text-decoration: underline;
+    cursor: hand;
+}
+/**************************************************************/
+.day {
+    border: solid thin;
+    border-left: 0;
+    height: 15vh !important;
+}
+.cell {
+    border: solid thin;
+    height: 15vh !important;
+    padding-left: .5vw;
+    padding-right: .5vw;
+    overflow: hidden;
+}
+.cell-content {
+    display: flex;
+    flex-direction: column;
+}
+.cell-header {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+.cell-body {
+    max-height: 100% !important;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.today-style {
+    color: red;
+    font-style: oblique;
+}
+
+.calendar-row {
+    padding: 0 0 0 0 !important;
+}
+
+.day-name{
+    border-bottom: solid thin;
+    border-right: solid thin;
+    text-align: right;
+}
+
+.event-icons {
+    width: 100%;
+    text-align: right;
+}
+.event-icon{
+    opacity: .85;
+}
+.event-icon:hover {
+    opacity: 1;
+}
+
+/***********************Custom 7 Column bootstrap grid********************************/
+@media (min-width: 768px){
+    .seven-cols .col-md-1,
+    .seven-cols .col-sm-1,
+    .seven-cols .col-lg-1  {
+        width: 100%;
+        *width: 100%;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .seven-cols .col-md-1,
+    .seven-cols .col-sm-1,
+    .seven-cols .col-lg-1 {
+        width: 14.285714285714285714285714285714%;
+        *width: 14.285714285714285714285714285714%;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .seven-cols .col-md-1,
+    .seven-cols .col-sm-1,
+    .seven-cols .col-lg-1 {
+        width: 14.285714285714285714285714285714%;
+        *width: 14.285714285714285714285714285714%;
+    }
+}
+/*************************************************************************************/
