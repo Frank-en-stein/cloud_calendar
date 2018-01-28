@@ -7,8 +7,8 @@ module.exports = function(app) {
     .get(calendar.init);
 
 
-  app.route('/month/:monthId')
-    .post(calendar.get_month);
+  app.route('/event/:monthId')
+    .post(calendar.get_events);
 
 
   app.route('/event/:eventId/:name/:date/:description/:status')

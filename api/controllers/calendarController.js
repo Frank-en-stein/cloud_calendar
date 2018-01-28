@@ -3,14 +3,12 @@
 var mongoose = require('mongoose'),
   Event = mongoose.model('Events');
 
-var __dirname = './api/views';
-
 exports.init = function(req, res) {
-  res.sendFile('index.html', { root: __dirname });
+  res.sendFile('index.html');
 };
 
-exports.get_month = function(req, res) {
-
+exports.get_events = function(req, res) {
+  
 };
 
 exports.new_event = function(req, res) {

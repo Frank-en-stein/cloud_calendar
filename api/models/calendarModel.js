@@ -12,16 +12,9 @@ var EventSchema = new Schema({
     type: String,
     default: '#'
   },
-  Created_date: {
+  created_date: {
     type: Date,
     required: 'Kindly enter the date of the event'
-  },
-  status: {
-    type: [{
-      type: String,
-      enum: ['pending', 'ongoing', 'completed', 'expired']
-    }],
-    default: ['pending']
   }
 });
 
