@@ -1,20 +1,18 @@
 'use strict';
-module.exports = function(app) {
+module.exports = function(app, socket) {
   var calendar = require('../controllers/calendarController');
 
   //Routes
-  app.route("/")
-    .get(calendar.init);
+
+  app.route('/events/:month/:year')
+    .get(calendar.get_events);
 
 
-  app.route('/event/:monthId')
-    .post(calendar.get_events);
-
-
-  app.route('/event/:eventId/:name/:date/:description/:status')
+  app.route('/event')
     .put(calendar.new_event)
-    .post(calendar.update_event)
-    .delete(calendar.delete_event);
+    .post(calendar.update_event);
+
+  app.route('/delete_event').post(calendar.delete_event);
 
   //middleware
   app.use(function(req, res) {

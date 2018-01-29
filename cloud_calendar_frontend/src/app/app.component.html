@@ -36,7 +36,7 @@
                             <div class="cell-content" *ngIf="calendar[week][day]!='0'">
                                 <div class="cell-header">
                                     <p *ngIf="(calendar[week][day]!='0' && width>768)"
-                                       class="{{current_date==calendar[week][day] ? 'today-style' : ''}}">
+                                       class="{{isToday(calendar[week][day]) ? 'today-style' : ''}}">
                                         {{calendar[week][day]}}
                                     </p>
                                     <div class="event-icons">
@@ -59,8 +59,8 @@
                                     </div>
                                 </div>
                                 <div class="cell-body" *ngIf="events[calendar[week][day]].length > 0">
-                                    <p *ngFor="let ev of events[calendar[week][day]]"
-                                       id="event_{{calendar[week][day]+'_'+ev.index}}"
+                                    <p *ngFor="let ev of events[calendar[week][day]]; let id=index"
+                                       id="event_{{calendar[week][day]+'_'+id}}"
                                        data-toggle="modal"
                                        data-target="#myModal"
                                        (click)="onEditEvent($event)"
@@ -108,7 +108,13 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-success" (click)="onSaveEvent()">Save</button>
+                            <button type="button" class="btn btn-danger" (click)="onDeleteEvent()"
+                                    style="float: left" data-dismiss="modal" [disabled]="event_props.index===-1">
+                                Delete
+                            </button>
+                            <button type="button" class="btn btn-success" (click)="onSaveEvent()" [disabled]="saveButtonState">
+                                {{saveButtonState ? "Saved" : "Save"}}
+                            </button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                         </div>
                     </div>
@@ -135,16 +141,16 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr *ngFor="let ev of events[event_props.date]"
+                                    <tr *ngFor="let ev of events[event_props.date]; let id=index"
                                         style="cursor: pointer">
-                                        <td id="listedeventname_{{event_props.date+'_'+ev.index}}"
+                                        <td id="listedeventname_{{event_props.date+'_'+id}}"
                                             data-dismiss="modal"
                                             data-toggle="modal"
                                             data-target="#myModal"
                                             (click)="onEditEvent($event)">
                                             {{ev.name}}
                                         </td>
-                                        <td id="listedeventdescription_{{event_props.date+'_'+ev.index}}"
+                                        <td id="listedeventdescription_{{event_props.date+'_'+id}}"
                                             data-dismiss="modal"
                                             data-toggle="modal"
                                             data-target="#myModal"

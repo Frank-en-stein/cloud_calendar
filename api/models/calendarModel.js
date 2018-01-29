@@ -4,6 +4,18 @@ var Schema = mongoose.Schema;
 
 
 var EventSchema = new Schema({
+  date: {
+    type: Number,
+    required: 'Kindly enter the name of the date'
+  },
+  month: {
+    type: Number,
+    required: 'Kindly enter the name of the month'
+  },
+  year: {
+    type: Number,
+    required: 'Kindly enter the name of the year'
+  },
   name: {
     type: String,
     required: 'Kindly enter the name of the event'
@@ -14,7 +26,7 @@ var EventSchema = new Schema({
   },
   created_date: {
     type: Date,
-    required: 'Kindly enter the date of the event'
+    default: new Date()
   }
 });
 
