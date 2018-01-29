@@ -1,7 +1,7 @@
 # cloud_calendar
 Sharable calendar implemented with full stack JS
 
-## Dependecy: 
+## Dependency: 
 * Mongo Database
 * Mongoose ODM
 * Express Application Framework
