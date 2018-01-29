@@ -1,6 +1,6 @@
 <div (window:resize)="onResize($event)">
     <app-navigation-bar></app-navigation-bar>
-    <div class="container container-fluid">
+    <div class="container-fluid" style="margin-top: 10vh">
         <div class="row">
             <div class="month-display">
                 <a (click)="stepMonth($event, false)"><span class="glyphicon glyphicon-triangle-left month-arrow"></span></a>
@@ -11,7 +11,7 @@
                 <a (click)="stepMonth($event, true)"><span class="glyphicon glyphicon-triangle-right month-arrow"></span></a>
             </div>
         </div>
-        <div class="row" *ngIf="(width>768)">
+        <div class="row" *ngIf="(width>767)">
             <div class="seven-cols">
                 <div *ngFor="let day of [0,1,2,3,4,5,6]" class="col-12 col-sm-1 day-name alert-success">
                     {{days_in_week[day]}}
@@ -22,7 +22,7 @@
             <div *ngFor="let week of [0,1,2,3,4]">
                 <div class="col-xs-12 col-sm-12 calendar-row seven-cols" id="{{'week'+week}}">
                     <div  *ngFor="let day of [0,1,2,3,4,5,6]">
-                        <div *ngIf="(width<=768 && calendar[week][day]!='0')"
+                        <div *ngIf="(width<=767 && calendar[week][day]!='0')"
                              style="height: 15vh !important;"
                              class="col-xs-2 col-sm-0 day-name alert-success">
                             {{days_in_week[day]}}
@@ -31,11 +31,11 @@
                                 <strong>{{(calendar[week][day]=='0' ? '' : calendar[week][day])}}</strong>
                             </h3>
                         </div>
-                        <div *ngIf="!(width<=768 && calendar[week][day]=='0')"
+                        <div *ngIf="!(width<=767 && calendar[week][day]=='0')"
                              class="{{'col-xs-10 col-sm-1' +(calendar[week][day]=='0' ? '':' cell')}}">
                             <div class="cell-content" *ngIf="calendar[week][day]!='0'">
                                 <div class="cell-header">
-                                    <p *ngIf="(calendar[week][day]!='0' && width>768)"
+                                    <p *ngIf="(calendar[week][day]!='0' && width>767)"
                                        class="{{isToday(calendar[week][day]) ? 'today-style' : ''}}">
                                         {{calendar[week][day]}}
                                     </p>
