@@ -112,7 +112,10 @@
                                     style="float: left" data-dismiss="modal" [disabled]="event_props.index===-1">
                                 Delete
                             </button>
-                            <button type="button" class="btn btn-success" (click)="onSaveEvent()" [disabled]="saveButtonState">
+                            <button type="button"
+                                    data-dismiss="modal"
+                                    class="btn btn-success"
+                                    (click)="onSaveEvent()">
                                 {{saveButtonState ? "Saved" : "Save"}}
                             </button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>

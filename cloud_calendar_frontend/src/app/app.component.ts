@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import * as io from 'socket.io-client';
 
@@ -9,7 +9,7 @@ import * as io from 'socket.io-client';
 })
 export class AppComponent implements OnInit{
   public host : string = 'http://localhost:3000';
-  public socket: SocketIOClient.Socket;
+  public socket: any;
   public current_date : number=1;
   public event_props : any = {
       index: -1,
@@ -17,8 +17,8 @@ export class AppComponent implements OnInit{
       name: '',
       description: ''
   };
-  public current_month : number=0;
-  public current_year : number=2018;
+  public current_month : any = 0;
+  public current_year : any = 2018;
   public months_in_year : any = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   public days_in_week : any = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   public events : any = new Array(32);
@@ -95,8 +95,9 @@ export class AppComponent implements OnInit{
       this.drawCalendar();
   }
   public drawCalendar() {
-      this.http.get(this.host + '/events/' + this.current_month + '/' + this.current_year).subscribe((data)=> {
+      this.http.get(this.host + '/events/' + this.current_month + '/' + this.current_year).subscribe((data : any)=> {
           for(var i=0; i<this.events.length; i++) this.events[i] = [];
+          console.log(data.calendar);
           this.calendar = data.calendar;
           data.events.forEach((ev)=>{
               if(ev.date>0 && ev.date<32) {
