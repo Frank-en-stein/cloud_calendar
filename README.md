@@ -12,6 +12,7 @@ Sharable calendar implemented with full stack JS
 * Socket IO
 
 ## Installation
+* git clone/zip download the while repo
 * Navigate to cloud_calendar and open terminal
 * Run `npm install`
 
