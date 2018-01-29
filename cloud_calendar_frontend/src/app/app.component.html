@@ -87,7 +87,7 @@
                         <div class="modal-body">
                             <div class="input-group">
                                 <span class="input-group-addon">Title</span>
-                                <input (input)="event_props.name=$event.target.value"
+                                <input (input)="event_props.name=$event.target.value; saveButtonState=false"
                                        [value]="event_props.name"
                                        id="msg"
                                        type="text"
@@ -98,7 +98,7 @@
                             </div>
                             <br>
                             <div class="form-group">
-                                <textarea (input)="event_props.description=$event.target.value"
+                                <textarea (input)="event_props.description=$event.target.value; saveButtonState=false"
                                           [value]="event_props.description"
                                           class="form-control"
                                           rows="3"

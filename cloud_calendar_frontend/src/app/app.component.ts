@@ -1,13 +1,15 @@
 import {Component} from "@angular/core";
 import { HttpClient } from '@angular/common/http';
+import * as io from 'socket.io-client';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   public host : string = 'http://localhost:3000';
+  public socket: SocketIOClient.Socket;
   public current_date : number=1;
   public event_props : any = {
       index: -1,
@@ -28,17 +30,53 @@ export class AppComponent {
      [ 28, 29, 30, 31,  0,  0,  0 ] ];
   public saveFlag : boolean = false;
   public width : Number = window.innerWidth;
-  public saveButtonState : boolean = false;  
+  public saveButtonState : boolean = false;
 
   constructor(private http: HttpClient) {
       for(var i=0; i<this.events.length; i++) this.events[i] = [];
 
+      this.socket = io.connect("http://localhost:3030");
+
       var date = new Date();
       this.current_date = date.getDate();
-      this.current_month = 5;//date.getMonth();
+      this.current_month = date.getMonth();
       this.current_year = date.getFullYear();
 
       this.drawCalendar();
+  }
+  ngOnInit() {
+      this.socket.on('update_event', (data: any) => {
+          if(typeof data.month!==undefined && typeof data.year!==undefined && typeof data.date!==undefined) {
+              this.current_month = parseInt(this.current_month);
+              this.current_year = parseInt(this.current_year);
+              if(parseInt(data.month)===this.current_month && parseInt(data.year)===this.current_year) {
+                  var found = false;console.log(this.events[parseInt(data.date)]);
+                  for(var i=0; i<this.events[parseInt(data.date)].length; i++) {
+                      console.log(this.events[parseInt(data.date)][i]._id + " " + data._id);
+                      if(this.events[parseInt(data.date)][i]._id===data._id){
+                          this.events[parseInt(data.date)][i] = data;
+                          found = true;
+                          break;
+                      }
+                  }
+                  if(found===false) this.events[parseInt(data.date)].push(data);
+              }
+          }
+      });
+      this.socket.on('delete_event', (data: any) => {console.log(data);
+          if(typeof data.month!==undefined && typeof data.year!==undefined && typeof data.date!==undefined) {
+              this.current_month = parseInt(this.current_month);
+              this.current_year = parseInt(this.current_year);
+              if(parseInt(data.month)===this.current_month && parseInt(data.year)===this.current_year) {
+                  for(var i=0; i<this.events[parseInt(data.date)].length; i++) {
+                      if(this.events[parseInt(data.date)][i]._id==data._id){
+                          this.events[parseInt(data.date)].splice(i, 1);
+                          break;
+                      }
+                  }
+              }
+          }
+      });
   }
   public onNewCalendar(event) {
       var mon = -1;
@@ -104,13 +142,12 @@ export class AppComponent {
           created_date: new Date()
       };
       if(this.event_props.index == -1) {
-          this.http.put(this.host + '/event', ev_obj).subscribe((data)=>this.events[this.event_props.date].push(data));
-          this.event_props.index = this.events[this.event_props.date].length-1;
+          this.http.put(this.host + '/event', ev_obj).subscribe((data)=>
+              this.event_props.index = this.events[this.event_props.date].length-1);
       }
       else {
           ev_obj["_id"] = this.events[this.event_props.date][this.event_props.index]._id;
-          this.http.post(this.host + '/event', ev_obj).subscribe((data)=>
-              this.events[this.event_props.date][this.event_props.index] = data);
+          this.http.post(this.host + '/event', ev_obj).subscribe();
       }
 
       this.saveFlag = false;
@@ -124,7 +161,7 @@ export class AppComponent {
   public stepMonth(event, forward) {
       this.current_month = parseInt(this.current_month);
       this.current_year = parseInt(this.current_year);
-      
+
       if(forward===true) {
           this.current_month+=1;
           if(this.current_month>11) {

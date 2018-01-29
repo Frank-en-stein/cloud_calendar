@@ -9,10 +9,10 @@ module.exports = function(app, socket) {
 
 
   app.route('/event')
-    .put(calendar.new_event)
-    .post(calendar.update_event);
+    .put((req, res)=>calendar.new_event(req, res, socket))
+    .post((req, res)=>calendar.update_event(req, res, socket));
 
-  app.route('/delete_event').post(calendar.delete_event);
+  app.route('/delete_event').post((req, res)=>calendar.delete_event(req, res, socket));
 
   //middleware
   app.use(function(req, res) {

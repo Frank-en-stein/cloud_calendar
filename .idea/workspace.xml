@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23ad019d-2245-4546-bff8-7adc89dcbc11" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/controllers/calendarController.js" afterPath="$PROJECT_DIR$/api/controllers/calendarController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/models/calendarModel.js" afterPath="$PROJECT_DIR$/api/models/calendarModel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/routes/calendarRoutes.js" afterPath="$PROJECT_DIR$/api/routes/calendarRoutes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.html" afterPath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.ts" afterPath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.module.ts" afterPath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exp.js" afterPath="$PROJECT_DIR$/exp.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="cloud_calendar.iws" />
@@ -35,8 +31,8 @@
       <file leaf-file-name="app.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="38" column="77" selection-start-line="38" selection-start-column="77" selection-end-line="38" selection-end-column="77" />
+            <state relative-caret-position="1700">
+              <caret line="100" column="84" selection-start-line="100" selection-start-column="84" selection-end-line="100" selection-end-column="84" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#a#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -48,8 +44,8 @@
       <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="126" column="6" selection-start-line="126" selection-start-column="6" selection-end-line="126" selection-end-column="6" />
+            <state relative-caret-position="215">
+              <caret line="53" column="80" selection-start-line="53" selection-start-column="80" selection-end-line="53" selection-end-column="80" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -85,8 +81,8 @@
         <option value="$PROJECT_DIR$/cloud-calendar-frontend/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/cloud-calendar-frontend/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.html" />
       </list>
     </option>
   </component>
@@ -302,15 +298,15 @@
       <workItem from="1517052648322" duration="30265000" />
       <workItem from="1517125677528" duration="42167000" />
       <workItem from="1517203726045" duration="12643000" />
-      <workItem from="1517227132807" duration="2778000" />
+      <workItem from="1517227132807" duration="11314000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87853000" />
+    <option name="totallyTimeSpent" value="96389000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26793557" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -455,8 +451,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="38" column="77" selection-start-line="38" selection-start-column="77" selection-end-line="38" selection-end-column="77" />
+        <state relative-caret-position="1700">
+          <caret line="100" column="84" selection-start-line="100" selection-start-column="84" selection-end-line="100" selection-end-column="84" />
           <folding>
             <element signature="n#style#0;n#span#0;n#a#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -466,8 +462,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="126" column="6" selection-start-line="126" selection-start-column="6" selection-end-line="126" selection-end-column="6" />
+        <state relative-caret-position="215">
+          <caret line="53" column="80" selection-start-line="53" selection-start-column="80" selection-end-line="53" selection-end-column="80" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

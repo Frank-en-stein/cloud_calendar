@@ -11,6 +11,7 @@ var express = require('express'),
   path = require('path');
 
 var __rootDir = './api/views';
+var socketHook = null;
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
@@ -27,13 +28,14 @@ app.use(bodyParser.json());
 //socketio setup
 io.on('connection', (socket) => {
   console.log('new connection made');
-
-  socket.join('CloudCalendar');
-
+  socket.join('room');
+  socketHook = io;
+  //io.in('room0_2018').emit('dateHere', {msg: "hello from the other side"});
 });
 
+
 var routes = require('./api/routes/calendarRoutes'); //importing route
-routes(app, 5); //register the route
+routes(app, io); //register the route
 
 server.listen(port);
 socketServer.listen(socketPort);
