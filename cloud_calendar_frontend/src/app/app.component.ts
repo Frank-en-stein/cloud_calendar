@@ -50,9 +50,8 @@ export class AppComponent implements OnInit{
               this.current_month = parseInt(this.current_month);
               this.current_year = parseInt(this.current_year);
               if(parseInt(data.month)===this.current_month && parseInt(data.year)===this.current_year) {
-                  var found = false;console.log(this.events[parseInt(data.date)]);
+                  var found = false;
                   for(var i=0; i<this.events[parseInt(data.date)].length; i++) {
-                      console.log(this.events[parseInt(data.date)][i]._id + " " + data._id);
                       if(this.events[parseInt(data.date)][i]._id===data._id){
                           this.events[parseInt(data.date)][i] = data;
                           found = true;
@@ -63,7 +62,7 @@ export class AppComponent implements OnInit{
               }
           }
       });
-      this.socket.on('delete_event', (data: any) => {console.log(data);
+      this.socket.on('delete_event', (data: any) => {
           if(typeof data.month!==undefined && typeof data.year!==undefined && typeof data.date!==undefined) {
               this.current_month = parseInt(this.current_month);
               this.current_year = parseInt(this.current_year);
@@ -97,7 +96,6 @@ export class AppComponent implements OnInit{
   public drawCalendar() {
       this.http.get(this.host + '/events/' + this.current_month + '/' + this.current_year).subscribe((data : any)=> {
           for(var i=0; i<this.events.length; i++) this.events[i] = [];
-          console.log(data.calendar);
           this.calendar = data.calendar;
           data.events.forEach((ev)=>{
               if(ev.date>0 && ev.date<32) {

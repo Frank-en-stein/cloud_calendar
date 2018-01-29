@@ -108,14 +108,14 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" (click)="onDeleteEvent()"
+                            <button type="button" class="btn btn-danger" (click)="onDeleteEvent($event)"
                                     style="float: left" data-dismiss="modal" [disabled]="event_props.index===-1">
                                 Delete
                             </button>
                             <button type="button"
                                     data-dismiss="modal"
                                     class="btn btn-success"
-                                    (click)="onSaveEvent()">
+                                    (click)="onSaveEvent($event)">
                                 {{saveButtonState ? "Saved" : "Save"}}
                             </button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
