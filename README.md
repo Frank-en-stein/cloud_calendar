@@ -13,5 +13,9 @@ Sharable calendar implemented with full stack JS
 
 ## Installation
 * Navigate to cloud_calendar and open terminal
-* `npm install`
+* Run `npm install`
+
+## Run
+* Navigate to cloud_calendar and open terminal
+* Run `npm run start`
 * Open Browser and go to [http://localhost:3000](http://localhost:3000)
