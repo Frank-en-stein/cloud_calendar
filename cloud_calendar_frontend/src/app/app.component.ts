@@ -28,8 +28,9 @@ export class AppComponent implements OnInit{
      [ 14, 15, 16, 17, 18, 19, 20 ],
      [ 21, 22, 23, 24, 25, 26, 27 ],
      [ 28, 29, 30, 31,  0,  0,  0 ] ];
-  public saveFlag : boolean = false;
   public width : Number = window.innerWidth;
+    
+  public saveFlag : boolean = false;
   public saveButtonState : boolean = false;
 
   constructor(private http: HttpClient) {
@@ -111,42 +112,11 @@ export class AppComponent implements OnInit{
   public onEditEvent(event) {
       this.saveButtonState = false;
       
-      this.event_props.index = event.target.id.split("_")[2];
-      this.event_props.date = event.target.id.split("_")[1];
+      this.event_props.index = parseInt(event.target.id.split("_")[2]);
+      this.event_props.date = parseInt(event.target.id.split("_")[1]);
       this.event_props.name = this.events[this.event_props.date][this.event_props.index].name;
       this.event_props.description = this.events[this.event_props.date][this.event_props.index].description;
   }
-  public onSaveEvent(event) {
-      if(this.event_props.name=='') {
-          this.saveFlag = true;
-          return;
-      }
-      var ev_obj = {
-          date: this.event_props.date,
-          month: this.current_month,
-          year: this.current_year,
-          name: this.event_props.name,
-          description: this.event_props.description,
-          created_date: new Date()
-      };
-      if(this.event_props.index == -1) {
-          this.http.put(this.host + '/event', ev_obj).subscribe((data)=>
-              this.event_props.index = this.events[this.event_props.date].length-1);
-      }
-      else {
-          ev_obj["_id"] = this.events[this.event_props.date][this.event_props.index]._id;
-          this.http.post(this.host + '/event', ev_obj).subscribe();
-      }
-
-      this.saveFlag = false;
-      this.saveButtonState = true;
-  }
-  public onDeleteEvent(event) {
-      this.http.post(this.host + '/delete_event', this.events[this.event_props.date][this.event_props.index]).subscribe((data)=>{
-          this.events[this.event_props.date].splice(this.event_props.index, 1);
-      });
-  }
-
   public isToday(date) {
       var d = new Date();
       return date==d.getDate() && this.current_month==d.getMonth() && this.current_year==d.getFullYear()

@@ -1,0 +1,54 @@
+<!--Event Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">
+          Event On ({{event_props.date+" "+months_in_year[current_month]+" "+current_year}})
+        </h4>
+      </div>
+      <div class="modal-body">
+        <div class="input-group">
+          <span class="input-group-addon">Title</span>
+          <input (input)="event_props.name=$event.target.value; saveButtonStateUpdate.emit(false)"
+                 [value]="event_props.name"
+                 id="msg"
+                 type="text"
+                 class="{{saveFlag==true ? 'form-control alert-danger':'form-control'}}"
+                 name="msg"
+                 placeholder="Event Name..."
+                 required>
+        </div>
+        <br>
+        <div class="form-group">
+          <textarea (input)="event_props.description=$event.target.value; saveButtonStateUpdate.emit(false)"
+                    [value]="event_props.description"
+                    class="form-control"
+                    rows="3"
+                    id="comment"
+                    placeholder="Brief description...">
+          </textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button"
+                class="btn btn-danger"
+                (click)="onDeleteEvent($event)"
+                style="float: left"
+                data-dismiss="modal"
+                [disabled]="event_props.index===-1">
+          Delete
+        </button>
+        <button type="button"
+                data-dismiss="modal"
+                class="btn btn-success"
+                (click)="onSaveEvent($event)">
+          {{saveButtonState ? "Saved" : "Save"}}
+        </button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->

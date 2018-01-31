@@ -2,8 +2,8 @@
     <app-navigation-bar></app-navigation-bar>
     <div class="container-fluid" style="margin-top: 10vh">
         <app-month-year-picker [current_month]="current_month"
-                            [current_year]="current_year"
-                            (update)="onChangeCalendar($event)">
+                               [current_year]="current_year"
+                               (update)="onChangeCalendar($event)">
         </app-month-year-picker>
 
         <div class="row" *ngIf="(width>767)">
@@ -69,104 +69,22 @@
                     </div>
                 </div>
             </div>
-            <!--Event Modal -->
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">
-                                Event On ({{event_props.date+" "+months_in_year[current_month]+" "+current_year}})
-                            </h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="input-group">
-                                <span class="input-group-addon">Title</span>
-                                <input (input)="event_props.name=$event.target.value; saveButtonState=false"
-                                       [value]="event_props.name"
-                                       id="msg"
-                                       type="text"
-                                       class="{{saveFlag==true ? 'form-control alert-danger':'form-control'}}"
-                                       name="msg"
-                                       placeholder="Event Name..."
-                                       required>
-                            </div>
-                            <br>
-                            <div class="form-group">
-                                <textarea (input)="event_props.description=$event.target.value; saveButtonState=false"
-                                          [value]="event_props.description"
-                                          class="form-control"
-                                          rows="3"
-                                          id="comment"
-                                          placeholder="Brief description...">
-                                </textarea>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" (click)="onDeleteEvent($event)"
-                                    style="float: left" data-dismiss="modal" [disabled]="event_props.index===-1">
-                                Delete
-                            </button>
-                            <button type="button"
-                                    data-dismiss="modal"
-                                    class="btn btn-success"
-                                    (click)="onSaveEvent($event)">
-                                {{saveButtonState ? "Saved" : "Save"}}
-                            </button>
-                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Modal -->
-            <!--List Modal -->
-            <div class="modal fade" id="listModal" role="dialog">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">
-                                Events On ({{event_props.date+" "+months_in_year[current_month]+" "+current_year}})
-                            </h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Details</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr *ngFor="let ev of events[event_props.date]; let id=index"
-                                        style="cursor: pointer">
-                                        <td id="listedeventname_{{event_props.date+'_'+id}}"
-                                            data-dismiss="modal"
-                                            data-toggle="modal"
-                                            data-target="#myModal"
-                                            (click)="onEditEvent($event)">
-                                            {{ev.name}}
-                                        </td>
-                                        <td id="listedeventdescription_{{event_props.date+'_'+id}}"
-                                            data-dismiss="modal"
-                                            data-toggle="modal"
-                                            data-target="#myModal"
-                                            (click)="onEditEvent($event)">
-                                            {{ev.description}}
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Modal -->
         </div>
     </div>
 </div>
+<app-add-edit-event-modal [current_month]="current_month"
+                    [current_year]="current_year"
+                    [saveButtonState]="saveButtonState"
+                    [saveFlag]="saveFlag"
+                    [events]="events"
+                    [event_props]="event_props"
+                    [host]="host"
+                    (saveButtonStateUpdate)="saveButtonState=$event">
+</app-add-edit-event-modal>
+
+<app-list-event-modal [event_props]="event_props"
+                      [events]="events"
+                      [current_month]="current_month"
+                      [current_year]="current_year"
+                      (update)="onEditEvent($event)">
+</app-list-event-modal>
