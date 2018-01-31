@@ -1,16 +1,11 @@
 <div (window:resize)="onResize($event)">
     <app-navigation-bar></app-navigation-bar>
     <div class="container-fluid" style="margin-top: 10vh">
-        <div class="row">
-            <div class="month-display">
-                <a (click)="stepMonth($event, false)"><span class="glyphicon glyphicon-triangle-left month-arrow"></span></a>
-                <input id="NoIconDemo" type="text"
-                       size="11"
-                       (blur)="onNewCalendar($event)"
-                       value="{{months_in_year[current_month] + '/' + current_year}}" disabled="true"/>
-                <a (click)="stepMonth($event, true)"><span class="glyphicon glyphicon-triangle-right month-arrow"></span></a>
-            </div>
-        </div>
+        <app-month-year-picker [current_month]="current_month"
+                            [current_year]="current_year"
+                            (update)="onChangeCalendar($event)">
+        </app-month-year-picker>
+
         <div class="row" *ngIf="(width>767)">
             <div class="seven-cols">
                 <div *ngFor="let day of [0,1,2,3,4,5,6]" class="col-12 col-sm-1 day-name alert-success">

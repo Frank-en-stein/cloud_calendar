@@ -5,12 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { MonthYearPickerComponent } from './month-year-picker/month-year-picker.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    MonthYearPickerComponent
   ],
   imports: [
     BrowserModule,

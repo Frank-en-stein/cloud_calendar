@@ -77,22 +77,11 @@ export class AppComponent implements OnInit{
           }
       });
   }
-  public onNewCalendar(event) {
-      var mon = -1;
-      for(var i=0; i<12; i++) {
-          if(this.months_in_year[i].toLowerCase()===event.target.value.split("/")[0].toLowerCase()) {
-              mon = i;
-          }
-      }
-      var yr = event.target.value.split("/")[1];
-      if(yr<0 || mon <0 || yr>2999) {
-          alert('Please enter a valid month of a valid year');
-          return;
-      }
-      this.current_month = mon;
-      this.current_year = yr;
+  public onChangeCalendar(event: any) {
+      this.current_month = event.current_month;
+      this.current_year = event.current_year;
       this.drawCalendar();
-  }
+  }  
   public drawCalendar() {
       this.http.get(this.host + '/events/' + this.current_month + '/' + this.current_year).subscribe((data : any)=> {
           for(var i=0; i<this.events.length; i++) this.events[i] = [];
@@ -157,26 +146,7 @@ export class AppComponent implements OnInit{
           this.events[this.event_props.date].splice(this.event_props.index, 1);
       });
   }
-  public stepMonth(event, forward) {
-      this.current_month = parseInt(this.current_month);
-      this.current_year = parseInt(this.current_year);
 
-      if(forward===true) {
-          this.current_month+=1;
-          if(this.current_month>11) {
-              this.current_month=0;
-              this.current_year+=1;
-          }
-      }
-      else {
-          this.current_month-=1;
-          if(this.current_month<0) {
-              this.current_month=11;
-              this.current_year-=1;
-          }
-      }
-      this.drawCalendar();
-  }
   public isToday(date) {
       var d = new Date();
       return date==d.getDate() && this.current_month==d.getMonth() && this.current_year==d.getFullYear()

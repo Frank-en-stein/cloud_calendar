@@ -10,28 +10,6 @@
     padding: .4em .6em;
     line-height: 0.8;
 }
-.month-display {
-    padding: 0 0 0 0 !important;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.month-arrow {
-    color: gray;
-    font-size: 4.5vh;
-}
-.month-arrow:hover {
-    color: black;
-}
-#NoIconDemo {
-    border: 0;
-    text-align: center;
-    font-size: 4vh;
-}
-#NoIconDemo:hover {
-    text-decoration: underline;
-    cursor: hand;
-}
 /**************************************************************/
 .day {
     border: solid thin;
