@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
   public current_month : any = 0;
   public current_year : any = 2018;
   public months_in_year : any = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  public events : any = new Array(32);
+  public events : Array<any> = new Array(32);
   public calendar : any =
    [ [  0,  1,  2,  3,  4,  5,  6 ],
      [  7,  8,  9, 10, 11, 12, 13 ],
@@ -50,29 +50,18 @@ export class AppComponent implements OnInit{
               this.current_month = parseInt(this.current_month);
               this.current_year = parseInt(this.current_year);
               if(parseInt(data.month)===this.current_month && parseInt(data.year)===this.current_year) {
-                  var found = false;
-                  for(var i=0; i<this.events[parseInt(data.date)].length; i++) {
-                      if(this.events[parseInt(data.date)][i]._id===data._id){
-                          this.events[parseInt(data.date)][i] = data;
-                          found = true;
-                          break;
-                      }
-                  }
-                  if(found===false) this.events[parseInt(data.date)].push(data);
+                  this.events[parseInt(data.date)][data._id] = data;
               }
           }
+
       });
       this.socket.on('delete_event', (data: any) => {
           if(typeof data.month!==undefined && typeof data.year!==undefined && typeof data.date!==undefined) {
               this.current_month = parseInt(this.current_month);
               this.current_year = parseInt(this.current_year);
               if(parseInt(data.month)===this.current_month && parseInt(data.year)===this.current_year) {
-                  for(var i=0; i<this.events[parseInt(data.date)].length; i++) {
-                      if(this.events[parseInt(data.date)][i]._id==data._id){
-                          this.events[parseInt(data.date)].splice(i, 1);
-                          break;
-                      }
-                  }
+                  //this.events[parseInt(data.date)].splice(data._id, 1);
+                  delete this.events[parseInt(data.date)][data._id];
               }
           }
       });
@@ -88,7 +77,7 @@ export class AppComponent implements OnInit{
           this.calendar = data.calendar;
           data.events.forEach((ev)=>{
               if(ev.date>0 && ev.date<32) {
-                  this.events[ev.date].push(ev);
+                  this.events[ev.date][ev._id] = ev;
               }
           });
       });
@@ -107,7 +96,7 @@ export class AppComponent implements OnInit{
   public loadModalData(event) {
       this.saveButtonState = false;
       
-      this.event_props.index = parseInt(event.target.id.split("_")[2]);
+      this.event_props.index = event.target.id.split("_")[2];
       this.event_props.date = parseInt(event.target.id.split("_")[1]);
       this.event_props.name = this.events[this.event_props.date][this.event_props.index].name;
       this.event_props.description = this.events[this.event_props.date][this.event_props.index].description;

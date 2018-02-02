@@ -22,4 +22,8 @@ export class ListEventModalComponent implements OnInit {
   public onEditEvent(event) {
     this.update.emit(event);
   }
+
+  daily_event_keys(date) {
+    return Object.keys(this.events[date]);
+  }
 }

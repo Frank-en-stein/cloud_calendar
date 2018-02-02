@@ -18,21 +18,21 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let ev of events[event_props.date]; let id=index"
+            <tr *ngFor="let key of daily_event_keys(event_props.date)"
                 style="cursor: pointer">
-              <td id="listedeventname_{{event_props.date+'_'+id}}"
+              <td id="listedeventname_{{event_props.date+'_'+events[event_props.date][key]._id}}"
                   data-dismiss="modal"
                   data-toggle="modal"
                   data-target="#myModal"
                   (click)="onEditEvent($event)">
-                {{ev.name}}
+                {{events[event_props.date][key].name}}
               </td>
-              <td id="listedeventdescription_{{event_props.date+'_'+id}}"
+              <td id="listedeventdescription_{{event_props.date+'_'+events[event_props.date][key]._id}}"
                   data-dismiss="modal"
                   data-toggle="modal"
                   data-target="#myModal"
                   (click)="onEditEvent($event)">
-                {{ev.description}}
+                {{events[event_props.date][key].description}}
               </td>
             </tr>
             </tbody>

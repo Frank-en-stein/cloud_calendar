@@ -41,7 +41,7 @@ export class AddEditEventModalComponent implements OnInit {
       this.http.put(this.host + '/event', ev_obj).subscribe();
     }
     else {
-      ev_obj["_id"] = this.events[this.event_props.date][this.event_props.index]._id;
+      ev_obj["_id"] = this.event_props.index;
       this.http.post(this.host + '/event', ev_obj).subscribe();
     }
 

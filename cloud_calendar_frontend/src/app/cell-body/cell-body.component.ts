@@ -16,4 +16,8 @@ export class CellBodyComponent implements OnInit {
   ngOnInit() {
   }
 
+  daily_event_keys() {
+    return Object.keys(this.daily_events);
+  }
+
 }

@@ -7,7 +7,7 @@
     <a data-toggle="modal"
        data-target="#listModal"
        (click)="init_modal.emit($event)"
-       *ngIf="events[date].length > 0">
+       *ngIf="daily_event_keys().length > 0">
 
       <span id="{{'listevent_'+date}}"
             class="glyphicon glyphicon-th-list alert-success event-icon"

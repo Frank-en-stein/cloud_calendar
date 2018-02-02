@@ -23,4 +23,8 @@ export class CellHeaderComponent implements OnInit {
     return date==d.getDate() && this.current_month==d.getMonth() && this.current_year==d.getFullYear()
   }
 
+  daily_event_keys() {
+    return Object.keys(this.events[this.date]);
+  }
+
 }

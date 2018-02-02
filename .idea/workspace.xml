@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="23ad019d-2245-4546-bff8-7adc89dcbc11" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.css" afterPath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.html" afterPath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/add-edit-event-modal/add-edit-event-modal.component.ts" afterPath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/add-edit-event-modal/add-edit-event-modal.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.ts" afterPath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.module.ts" afterPath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud_calendar_frontend/src/styles.css" afterPath="$PROJECT_DIR$/cloud_calendar_frontend/src/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-body/cell-body.component.html" afterPath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-body/cell-body.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-body/cell-body.component.ts" afterPath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-body/cell-body.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-header/cell-header.component.html" afterPath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-header/cell-header.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-header/cell-header.component.ts" afterPath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-header/cell-header.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/list-event-modal/list-event-modal.component.html" afterPath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/list-event-modal/list-event-modal.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/list-event-modal/list-event-modal.component.ts" afterPath="$PROJECT_DIR$/cloud_calendar_frontend/src/app/list-event-modal/list-event-modal.component.ts" />
     </list>
     <ignored path="cloud_calendar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,8 +35,8 @@
       <file leaf-file-name="app.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+            <state relative-caret-position="2">
+              <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -41,11 +44,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="list-event-modal.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/list-event-modal/list-event-modal.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list-event-modal.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/list-event-modal/list-event-modal.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+            <state relative-caret-position="394">
+              <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -87,26 +110,26 @@
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/month-year-picker/month-year-picker.component.css" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/month-year-picker/month-year-picker.component.html" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/month-year-picker/month-year-picker.component.ts" />
-        <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/list-event-modal/list-event-modal.component.html" />
-        <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/list-event-modal/list-event-modal.component.ts" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/add-edit-event-modal/add-edit-event-modal.component.html" />
-        <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/add-edit-event-modal/add-edit-event-modal.component.ts" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/bigscreen-days/bigscreen-days.component.css" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/styles.css" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/smallscreen-days/smallscreen-days.component.css" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/bigscreen-days/bigscreen-days.component.ts" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/bigscreen-days/bigscreen-days.component.html" />
-        <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-body/cell-body.component.ts" />
-        <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-body/cell-body.component.html" />
-        <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-header/cell-header.component.html" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-body/cell-body.component.css" />
-        <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-header/cell-header.component.ts" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.css" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-header/cell-header.component.css" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/smallscreen-days/smallscreen-days.component.ts" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/smallscreen-days/smallscreen-days.component.html" />
+        <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/add-edit-event-modal/add-edit-event-modal.component.ts" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.html" />
+        <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-body/cell-body.component.ts" />
+        <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-body/cell-body.component.html" />
         <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-header/cell-header.component.ts" />
+        <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-header/cell-header.component.html" />
+        <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/list-event-modal/list-event-modal.component.ts" />
+        <option value="$PROJECT_DIR$/cloud_calendar_frontend/src/app/list-event-modal/list-event-modal.component.html" />
       </list>
     </option>
   </component>
@@ -246,7 +269,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="cell-body" />
+              <option name="myItemId" value="list-event-modal" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -335,12 +358,12 @@
       <workItem from="1517295824878" duration="1028000" />
       <workItem from="1517335140178" duration="15205000" />
       <workItem from="1517443704062" duration="1142000" />
-      <workItem from="1517540913541" duration="11961000" />
+      <workItem from="1517540913541" duration="18772000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130931000" />
+    <option name="totallyTimeSpent" value="137742000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -486,40 +509,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/list-event-modal/list-event-modal.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/add-edit-event-modal/add-edit-event-modal.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/list-event-modal/list-event-modal.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="2" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/add-edit-event-modal/add-edit-event-modal.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/add-edit-event-modal/add-edit-event-modal.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -573,26 +566,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-body/cell-body.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-body/cell-body.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-header/cell-header.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -602,17 +579,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-header/cell-header.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="84" selection-start-line="17" selection-start-column="84" selection-end-line="17" selection-end-column="84" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -648,31 +614,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/add-edit-event-modal/add-edit-event-modal.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="36" column="45" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/add-edit-event-modal/add-edit-event-modal.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-body/cell-body.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        <state relative-caret-position="17">
+          <caret line="1" column="42" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-body/cell-body.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="20" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-header/cell-header.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/cell-header/cell-header.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
+        <state relative-caret-position="2">
+          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/app.component.ts">
+    <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/list-event-modal/list-event-modal.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="442">
+          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cloud_calendar_frontend/src/app/list-event-modal/list-event-modal.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
