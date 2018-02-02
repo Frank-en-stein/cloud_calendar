@@ -1,75 +1,41 @@
 <div (window:resize)="onResize($event)">
     <app-navigation-bar></app-navigation-bar>
-    <div class="container-fluid" style="margin-top: 10vh">
+    <div class="container-fluid page-body" style="margin-top: 10vh">
         <app-month-year-picker [current_month]="current_month"
                                [current_year]="current_year"
                                (update)="onChangeCalendar($event)">
         </app-month-year-picker>
 
-        <div class="row" *ngIf="(width>767)">
-            <div class="seven-cols">
-                <div *ngFor="let day of [0,1,2,3,4,5,6]" class="col-12 col-sm-1 day-name alert-success">
-                    {{days_in_week[day]}}
-                </div>
-            </div>
-        </div>
+        <app-bigscreen-days [width]="width"></app-bigscreen-days>
+
         <div class="row">
-            <div *ngFor="let week of [0,1,2,3,4]">
-                <div class="col-xs-12 col-sm-12 calendar-row seven-cols" id="{{'week'+week}}">
-                    <div  *ngFor="let day of [0,1,2,3,4,5,6]">
-                        <div *ngIf="(width<=767 && calendar[week][day]!='0')"
-                             style="height: 15vh !important;"
-                             class="col-xs-2 col-sm-0 day-name alert-success">
-                            {{days_in_week[day]}}
-                            <br>
-                            <h3 class="{{current_date==calendar[week][day] ? 'today-style' : ''}}">
-                                <strong>{{(calendar[week][day]=='0' ? '' : calendar[week][day])}}</strong>
-                            </h3>
-                        </div>
-                        <div *ngIf="!(width<=767 && calendar[week][day]=='0')"
-                             class="{{'col-xs-10 col-sm-1' +(calendar[week][day]=='0' ? '':' cell')}}">
-                            <div class="cell-content" *ngIf="calendar[week][day]!='0'">
-                                <div class="cell-header">
-                                    <p *ngIf="(calendar[week][day]!='0' && width>767)"
-                                       class="{{isToday(calendar[week][day]) ? 'today-style' : ''}}">
-                                        {{calendar[week][day]}}
-                                    </p>
-                                    <div class="event-icons">
-                                        <a data-toggle="modal"
-                                           data-target="#listModal"
-                                           (click)="onListEvent($event)"
-                                           *ngIf="events[calendar[week][day]].length > 0"
-                                        >
-                                            <span id="{{'listevent_'+calendar[week][day]}}"
-                                                  class="glyphicon glyphicon-th-list alert-success event-icon"
-                                                  style="cursor: pointer"></span>
-                                        </a>
-                                        &nbsp;
-                                        <a data-toggle="modal" data-target="#myModal" (click)="onAddEvent($event)">
-                                            <span id="{{'addevent_'+calendar[week][day]}}"
-                                                  class="glyphicon glyphicon-plus alert-warning event-icon"
-                                                  style="cursor: pointer">
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="cell-body" *ngIf="events[calendar[week][day]].length > 0">
-                                    <p *ngFor="let ev of events[calendar[week][day]]; let id=index"
-                                       id="event_{{calendar[week][day]+'_'+id}}"
-                                       data-toggle="modal"
-                                       data-target="#myModal"
-                                       (click)="onEditEvent($event)"
-                                       class="alert-info"
-                                       style="margin:0 0 0 0; border-bottom: thin solid grey; cursor: pointer" >
-                                            {{ev.name}}
-                                    </p>
-                                </div>
-                            </div>
+            <div class="col-xs-12 col-sm-12 calendar-row seven-cols" id="{{'week'+week}}" *ngFor="let week of [0,1,2,3,4]">
+                <div  *ngFor="let day of [0,1,2,3,4,5,6]">
+                    <app-smallscreen-days [width]="width"
+                                          [weekday]="day"
+                                          [current_date]="current_date"
+                                          [date]="calendar[week][day]">
+                    </app-smallscreen-days>
+                    <div *ngIf="!(width<=767 && calendar[week][day]=='0')"
+                         class="{{'col-xs-10 col-sm-1' +(calendar[week][day]=='0' ? '':' cell')}}">
+                        <div class="cell-content" *ngIf="calendar[week][day]!='0'">
+                            <app-cell-header [current_month]="current_month"
+                                             [current_year]="current_year"
+                                             [date]="calendar[week][day]"
+                                             [width]="width"
+                                             [events]="events"
+                                             (init_modal)="initModal($event)">
+                            </app-cell-header>
+                            <app-cell-body [daily_events]="events[calendar[week][day]]"
+                                           [date]="calendar[week][day]"
+                                           (handle_click)="loadModalData($event)">
+                            </app-cell-body>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 <app-add-edit-event-modal [current_month]="current_month"
@@ -86,5 +52,5 @@
                       [events]="events"
                       [current_month]="current_month"
                       [current_year]="current_year"
-                      (update)="onEditEvent($event)">
+                      (update)="loadModalData($event)">
 </app-list-event-modal>

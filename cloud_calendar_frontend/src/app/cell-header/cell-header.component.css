@@ -1,0 +1,28 @@
+.cell-header {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.event-icons {
+    width: 100%;
+    text-align: right;
+}
+.event-icon{
+    opacity: .85;
+}
+.event-icon:hover {
+    opacity: 1;
+}
+
+.today-style {
+    color: white;
+    font-style: oblique;
+    font-weight: bold;
+    padding-left: 3%;
+    padding-right: 5%;
+    margin-bottom: .5vh;
+    border: solid black;
+    border-radius: 100%;
+    background-color: black;
+}

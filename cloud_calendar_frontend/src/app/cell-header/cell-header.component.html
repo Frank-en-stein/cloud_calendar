@@ -1,0 +1,25 @@
+<div class="cell-header">
+  <p *ngIf="(date!='0' && width>767)"
+     class="{{isToday(date) ? 'today-style' : ''}}">
+    {{date}}
+  </p>
+  <div class="event-icons">
+    <a data-toggle="modal"
+       data-target="#listModal"
+       (click)="init_modal.emit($event)"
+       *ngIf="events[date].length > 0">
+
+      <span id="{{'listevent_'+date}}"
+            class="glyphicon glyphicon-th-list alert-success event-icon"
+            style="cursor: pointer">
+      </span>
+    </a>
+    &nbsp;
+    <a data-toggle="modal" data-target="#myModal" (click)="init_modal.emit($event)">
+      <span id="{{'addevent_'+date}}"
+            class="glyphicon glyphicon-plus alert-warning event-icon"
+            style="cursor: pointer">
+      </span>
+    </a>
+  </div>
+</div>

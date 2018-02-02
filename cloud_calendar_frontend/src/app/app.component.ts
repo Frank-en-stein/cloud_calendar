@@ -20,7 +20,6 @@ export class AppComponent implements OnInit{
   public current_month : any = 0;
   public current_year : any = 2018;
   public months_in_year : any = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  public days_in_week : any = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   public events : any = new Array(32);
   public calendar : any =
    [ [  0,  1,  2,  3,  4,  5,  6 ],
@@ -94,11 +93,10 @@ export class AppComponent implements OnInit{
           });
       });
   }
-
   public onResize(event) {
       this.width = event.target.innerWidth;
   }
-  public onAddEvent(event) {
+  public initModal(event) {
       this.event_props.index = -1;
       this.event_props.date = event.target.id.split("_")[1];
       this.event_props.name = '';
@@ -106,19 +104,12 @@ export class AppComponent implements OnInit{
       
       this.saveButtonState = false;
   }
-  public onListEvent(event) {
-      this.onAddEvent(event);
-  }  
-  public onEditEvent(event) {
+  public loadModalData(event) {
       this.saveButtonState = false;
       
       this.event_props.index = parseInt(event.target.id.split("_")[2]);
       this.event_props.date = parseInt(event.target.id.split("_")[1]);
       this.event_props.name = this.events[this.event_props.date][this.event_props.index].name;
       this.event_props.description = this.events[this.event_props.date][this.event_props.index].description;
-  }
-  public isToday(date) {
-      var d = new Date();
-      return date==d.getDate() && this.current_month==d.getMonth() && this.current_year==d.getFullYear()
   }
 }

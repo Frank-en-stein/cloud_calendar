@@ -1,0 +1,7 @@
+<div class="row" *ngIf="(width>767)">
+  <div class="seven-cols">
+    <div *ngFor="let day of days_in_week" class="col-12 col-sm-1 day-name alert-success">
+      {{day}}
+    </div>
+  </div>
+</div>

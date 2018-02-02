@@ -8,6 +8,10 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { MonthYearPickerComponent } from './month-year-picker/month-year-picker.component';
 import { AddEditEventModalComponent } from './add-edit-event-modal/add-edit-event-modal.component';
 import { ListEventModalComponent } from './list-event-modal/list-event-modal.component';
+import { BigscreenDaysComponent } from './bigscreen-days/bigscreen-days.component';
+import { SmallscreenDaysComponent } from './smallscreen-days/smallscreen-days.component';
+import { CellHeaderComponent } from './cell-header/cell-header.component';
+import { CellBodyComponent } from './cell-body/cell-body.component';
 
 
 @NgModule({
@@ -16,7 +20,11 @@ import { ListEventModalComponent } from './list-event-modal/list-event-modal.com
     NavigationBarComponent,
     MonthYearPickerComponent,
     AddEditEventModalComponent,
-    ListEventModalComponent
+    ListEventModalComponent,
+    BigscreenDaysComponent,
+    SmallscreenDaysComponent,
+    CellHeaderComponent,
+    CellBodyComponent
   ],
   imports: [
     BrowserModule,

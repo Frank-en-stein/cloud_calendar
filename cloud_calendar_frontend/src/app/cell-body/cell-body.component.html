@@ -1,0 +1,11 @@
+<div class="cell-body" *ngIf="daily_events.length > 0">
+  <p *ngFor="let ev of daily_events; let id=index"
+     id="event_{{date+'_'+id}}"
+     data-toggle="modal"
+     data-target="#myModal"
+     (click)="handle_click.emit($event)"
+     class="alert-info"
+     style="margin:0 0 0 0; border-bottom: thin solid grey; cursor: pointer" >
+    {{ev.name}}
+  </p>
+</div>

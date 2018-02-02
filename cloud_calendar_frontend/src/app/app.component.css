@@ -27,70 +27,8 @@
     display: flex;
     flex-direction: column;
 }
-.cell-header {
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-}
-.cell-body {
-    max-height: 100% !important;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-.today-style {
-    color: red;
-    font-style: oblique;
-}
 
 .calendar-row {
     padding: 0 0 0 0 !important;
+    width: 100% !important;
 }
-
-.day-name{
-    border-bottom: solid thin;
-    border-right: solid thin;
-    text-align: right;
-}
-
-.event-icons {
-    width: 100%;
-    text-align: right;
-}
-.event-icon{
-    opacity: .85;
-}
-.event-icon:hover {
-    opacity: 1;
-}
-
-/***********************Custom 7 Column bootstrap grid********************************/
-@media (min-width: 768px){
-    .seven-cols .col-md-1,
-    .seven-cols .col-sm-1,
-    .seven-cols .col-lg-1  {
-        width: 100%;
-        *width: 100%;
-    }
-}
-
-
-@media (min-width: 768px) {
-    .seven-cols .col-md-1,
-    .seven-cols .col-sm-1,
-    .seven-cols .col-lg-1 {
-        width: 14.285714285714285714285714285714%;
-        *width: 14.285714285714285714285714285714%;
-    }
-}
-
-
-@media (min-width: 1200px) {
-    .seven-cols .col-md-1,
-    .seven-cols .col-sm-1,
-    .seven-cols .col-lg-1 {
-        width: 14.285714285714285714285714285714%;
-        *width: 14.285714285714285714285714285714%;
-    }
-}
-/*************************************************************************************/

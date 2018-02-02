@@ -1,0 +1,10 @@
+.today-style {
+    color: red;
+    font-style: oblique;
+}
+
+.day-name{
+    border-bottom: solid thin;
+    border-right: solid thin;
+    text-align: right;
+}
